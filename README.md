@@ -19,5 +19,5 @@ If you liked this tool and would like to support me to add more features you can
 
 
 -------------------------------
-[!["License: PolyForm Noncommercial License 1.0.0"]](https://polyformproject.org/licenses/noncommercial/1.0.0)
+["License: PolyForm Noncommercial License 1.0.0"](https://polyformproject.org/licenses/noncommercial/1.0.0)
 -------------------------------
