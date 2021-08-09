@@ -1,4 +1,4 @@
-# OneDrivePhotoOrganizer
+# OneDrive Photo Organizer
 Command line tool to organize camera roll photos by year/month folders on OneDrive.
 This tool is using the image date taen property to get the creation date
 if date taken property is not available, it extracts the date from the file name
