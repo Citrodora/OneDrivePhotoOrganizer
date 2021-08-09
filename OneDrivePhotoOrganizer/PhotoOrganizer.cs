@@ -19,16 +19,27 @@ namespace OneDrivePhotoOrganizer
             _datePatterns = new List<DatePattern>();
         }
 
-        private DateTime? GetDateTakenFromImage(string path)
+        private DateTime? GetDateTakenFromImage(string path, bool ignoreExceptions = true)
         {
-            using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
-            using var imageFile = Image.FromStream(fileStream, false, false);
-            if (imageFile.PropertyItems.All(item => item.Id != 36867)) return null;
-            var propItem = imageFile.GetPropertyItem(36867);
-            if (propItem is { Value: { } })
+            try
             {
-                var dateTaken = _colonRegexew.Replace(Encoding.UTF8.GetString(propItem.Value), "-", 2);
-                return DateTime.Parse(dateTaken);
+                using var fileStream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                using var imageFile = Image.FromStream(fileStream, false, false);
+               
+                if (imageFile.PropertyItems.All(item => item.Id != 36867)) return null;
+                var propItem = imageFile.GetPropertyItem(36867);
+                if (propItem is { Value: { } })
+                {
+                    var dateTaken = _colonRegexew.Replace(Encoding.UTF8.GetString(propItem.Value), "-", 2);
+                    return DateTime.Parse(dateTaken);
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ignoreExceptions)
+                    Console.WriteLine(ex);
+                else
+                    throw;
             }
 
             return null;
