@@ -7,6 +7,15 @@ Usage:
 
 PhotoOrganizer.exe -path:"your OneDrive pictures folder path"
 
+You can use batch files to pass the path and call this tool with one click or use task scheduler to call this tool.
+
+
+If you liked this tool and would like to support me to add more features you can Buy Me A Coffee
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/tammam)
+
+
+
 
 
 -------------------------------
